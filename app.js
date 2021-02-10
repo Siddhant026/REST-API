@@ -9,7 +9,7 @@ const ordersRoute = require('./api/routes/orders');
 const usersRoute = require('./api/routes/users');
 
 mongoose
-    .connect('mongodb+srv://admin:admin@node-rest-shop.szroc.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, 
+    .connect(process.env.MONGO_ATLAS_LINK, {useNewUrlParser: true, 
     useUnifiedTopology: true})
     .then(() => console.log('Database Connected'))
     .catch(err => console.log(err));
